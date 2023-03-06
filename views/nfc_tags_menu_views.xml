@@ -1,0 +1,17 @@
+<odoo>
+    <data>
+
+        <!-- Top menu item -->
+        <menuitem name="NFC Tags"
+                  id="nfc_tags.menu_root"
+        action="nfc_tags.action_window"/>
+
+        <!-- menu categories -->
+        <menuitem name="Scaffold Details"
+                  id="nfc_tags.scaffold_details"
+                  parent="nfc_tags.menu_root"
+                  sequence="1"
+                  action="nfc_tags.scaffold_details_action_window"/>
+
+    </data>
+</odoo>

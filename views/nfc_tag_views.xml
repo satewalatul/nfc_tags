@@ -1,0 +1,54 @@
+<odoo>
+  <data>
+    <!-- explicit list view definition -->
+    <record model="ir.ui.view" id="nfc_tags.list">
+      <field name="name">nfc_tags list</field>
+      <field name="model">nfc_tags</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="tag_id"/>
+          <field name="is_linked" readonly="1"/>
+        </tree>
+      </field>
+    </record>
+
+    <!-- actions opening views on models -->
+
+    <record model="ir.actions.act_window" id="nfc_tags.action_window">
+      <field name="name">NFC Tags</field>
+      <field name="res_model">nfc_tags</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+
+    <!-- server action to the one above -->
+
+    <record model="ir.actions.server" id="nfc_tags.action_server">
+      <field name="name">nfc_tags server</field>
+      <field name="model_id" ref="model_nfc_tags"/>
+      <field name="state">code</field>
+      <field name="code">
+        action = {
+          "type": "ir.actions.act_window",
+          "view_mode": "tree,form",
+          "res_model": model._name,
+        }
+      </field>
+    </record>
+
+
+<!--    &lt;!&ndash; Top menu item &ndash;&gt;-->
+<!--    <menuitem name="NFC Tags" id="nfc_tags.menu_root"/>-->
+<!--    &lt;!&ndash; menu categories &ndash;&gt;-->
+
+<!--    <menuitem name="Menu 1" id="nfc_tags.menu_1" parent="nfc_tags.menu_root"/>-->
+<!--    <menuitem name="Menu 2" id="nfc_tags.menu_2" parent="nfc_tags.menu_root"/>-->
+<!--    &lt;!&ndash; actions &ndash;&gt;-->
+
+<!--    <menuitem name="List" id="nfc_tags.menu_1_list" parent="nfc_tags.menu_1"-->
+<!--              action="nfc_tags.action_window"/>-->
+<!--    <menuitem name="Server to list" id="nfc_tags" parent="nfc_tags.menu_2"-->
+<!--              action="nfc_tags.action_server"/>-->
+
+  </data>
+</odoo>

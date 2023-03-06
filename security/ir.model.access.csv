@@ -1,0 +1,5 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_nfc_tags,nfc_tags_nfc_tags,model_nfc_tags,base.group_user,1,1,1,1
+access_scaffold_details,nfc_tags.scaffold_details,model_scaffold_details,base.group_user,1,1,1,1
+access_scaffold_active,nfc_tags.scaffold_active,model_scaffold_active,base.group_user,1,1,1,1
+access,nfc_tags.scaffold_status,model_scaffold_status,base.group_user,1,1,1,1

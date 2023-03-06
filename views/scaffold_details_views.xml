@@ -1,0 +1,51 @@
+<odoo>
+  <data>
+    <!-- explicit list view definition -->
+    <record model="ir.ui.view" id="nfc_tags.scaffold_details_list">
+      <field name="name">scaffold_details list</field>
+      <field name="model">scaffold_details</field>
+      <field name="arch" type="xml">
+        <tree>
+              <field name="tag_id"/>
+              <field name="permit_id"/>
+              <field name="next_inspection_date"/>
+              <field name="length"/>
+              <field name="breadth"/>
+              <field name="height"/>
+              <field name="safe_working_load"/>
+              <field name="erected_by"/>
+              <field name="erected_by_company"/>
+              <field name="status" widget="badge"/>
+              <field name="active" widget="badge"/>
+              <field name="latitude"/>
+              <field name="longitude"/>
+              <field name="details"/>
+        </tree>
+      </field>
+    </record>
+
+    <!-- actions opening views on models -->
+
+    <record model="ir.actions.act_window" id="nfc_tags.scaffold_details_action_window">
+      <field name="name">Scaffold Details</field>
+      <field name="res_model">scaffold_details</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+
+    <!-- server action to the one above -->
+
+    <record model="ir.actions.server" id="nfc_tags.scaffold_details_action_server">
+      <field name="name">scaffold_details server</field>
+      <field name="model_id" ref="model_scaffold_details"/>
+      <field name="state">code</field>
+      <field name="code">
+        action = {
+          "type": "ir.actions.act_window",
+          "view_mode": "tree,form",
+          "res_model": model._name,
+        }
+      </field>
+    </record>
+  </data>
+</odoo>
