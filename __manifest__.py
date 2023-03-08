@@ -27,7 +27,6 @@
         'security/ir.model.access.csv',
         'views/nfc_tag_views.xml',
         'views/scaffold_details_views.xml',
-        'views/templates.xml',
         'views/nfc_tags_menu_views.xml',
 
     ],

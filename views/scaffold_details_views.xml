@@ -1,6 +1,7 @@
 <odoo>
   <data>
-    <!-- explicit list view definition -->
+    <!-- explicit list view definition
+    <record model="ir.ui.view" id="n-->
     <record model="ir.ui.view" id="nfc_tags.scaffold_details_list">
       <field name="name">scaffold_details list</field>
       <field name="model">scaffold_details</field>
@@ -16,7 +17,7 @@
               <field name="erected_by"/>
               <field name="erected_by_company"/>
               <field name="status" widget="badge"/>
-              <field name="active" widget="badge"/>
+              <field name="is_active" widget="badge"/>
               <field name="latitude"/>
               <field name="longitude"/>
               <field name="details"/>
@@ -24,6 +25,44 @@
       </field>
     </record>
 
+<!--    this is the main form sheet  -->
+    <record id="nfc_tags.scaffold_details_form" model="ir.ui.view">
+            <field name="name">nfc.tags.scaffold_details</field>
+            <field name="model">scaffold_details</field>
+            <field name="arch" type="xml">
+                <form class="scaffold_details_form">
+                    <sheet>
+                        <group>
+
+                            <group>
+                                <field name="tag_id"/>
+                                <field name="permit_id"/>
+                                <field name="next_inspection_date"/>
+                                <field name="length"/>
+                                <field name="breadth"/>
+                                <field name="height"/>
+                                <field name="safe_working_load"/>
+
+                            </group>
+
+                            <group>
+                                <field name="erected_by"/>
+                                <field name="erected_by_company"/>
+                                <field name="status"/>
+                                <field name="is_active" />
+                                <field name="latitude"/>
+                                <field name="longitude"/>
+                                <field name="details"/>
+
+
+                            </group>
+                        </group>
+
+                    </sheet>
+
+                </form>
+            </field>
+        </record>
     <!-- actions opening views on models -->
 
     <record model="ir.actions.act_window" id="nfc_tags.scaffold_details_action_window">
@@ -49,3 +88,4 @@
     </record>
   </data>
 </odoo>
+

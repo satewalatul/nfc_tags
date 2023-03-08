@@ -2,11 +2,11 @@
 
 from odoo import models, fields, api
 
-class ScaffoldActive(models.Model):
-    _name = 'scaffold_active'
-    _description ='scaffold_active'
+class Scaffold_Is_Active(models.Model):
+     _name = 'scaffold_is_active'
+     _description ='scaffold_is_active'
 
-    name = fields.Char(string='active')
+     name = fields.Char(string='')
 class ScaffoldStatus(models.Model):
     _name = 'scaffold_status'
     _description ='scaffold_status'
@@ -26,7 +26,7 @@ class ScaffoldDetails(models.Model):
     erected_by = fields.Char(string='Erected By')
     erected_by_company = fields.Char(string='Erected By Company')
     status = fields.Many2one(comodel_name='scaffold_status', string='Status')
-    active = fields.Many2one(comodel_name='scaffold_active',string='Active')
+    is_active = fields.Many2one(comodel_name='scaffold_is_active',string='Active')
     latitude = fields.Float(string='Latitude Position')
     longitude = fields.Float(string='Longitude Position')
     details = fields.Text(string='Details')
