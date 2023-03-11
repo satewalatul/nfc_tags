@@ -20,7 +20,7 @@
     'version': '0.1',
 
     # any module necessary for this one to work correctly
-    'depends': ['base'],
+    'depends': ['base','web_google_maps'],
 
     # always loaded
     'data': [
@@ -28,6 +28,7 @@
         'views/nfc_tag_views.xml',
         'views/scaffold_details_views.xml',
         'views/nfc_tags_menu_views.xml',
+        'views/nfc_tags_map.xml',
 
     ],
     # only loaded in demonstration mode

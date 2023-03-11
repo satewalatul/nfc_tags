@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="view_scaffold_details_google_map" model="ir.ui.view">
+        <field name="name">view.scaffold_details.google_map</field>
+        <field name="model">scaffold_details</field>
+        <field name="arch" type="xml">
+            <google_map string="Maps" lat="latitude" lng="longitude" colors='{"planned": "success", "today": "warning", "overdue": "danger"}'>
+                <field name="latitude"/>
+                <field name="longitude"/>
+                <field name="permit_id"/>
+                <templates>
+                    <t t-name="kanban-box">
+                        <div t-attf-class="oe_kanban_content">
+                            <div>
+                                <strong class="o_kanban_record_title"><span><field name="permit_id"/></span></strong>
+                            </div>
+                        </div>
+                    </t>
+                </templates>
+            </google_map>
+        </field>
+    </record>
+
+     <record id="scaffold_details_action_window" model="ir.actions.act_window">
+        <field name="view_mode">tree,form,google_map</field>
+     </record>
+
+    <record id="scaffold_details_all_google_map_view" model="ir.actions.act_window.view">
+        <field name="sequence" eval="100"/>
+        <field name="view_mode">google_map</field>
+        <field name="view_id" ref="view_scaffold_details_google_map"/>
+        <field name="act_window_id" ref="scaffold_details_action_window"/>
+    </record>
+
+    <record id="action_scaffold_details_map" model="ir.actions.act_window">
+        <field name="name">Google Map</field>
+        <field name="res_model">scaffold_details</field>
+        <field name="view_mode">tree,form,google_map</field>
+        <field name="view_id" ref="view_scaffold_details_google_map"/>
+        <field name="domain">[('id', '=', active_id)]</field>
+    </record>
+
+    <record id="view_scaffold_details_form_google_maps_inherit" model="ir.ui.view">
+        <field name="name">view.scaffold_details.form.google_maps.inherit</field>
+        <field name="model">scaffold_details</field>
+        <field name="inherit_id" ref="view_scaffold_details_form"/>
+        <field name="priority" eval="1000"/>
+        <field name="arch" type="xml">
+            <xpath expr="//div[@name='button_box']" position="inside">
+                <button name="%(action_scaffold_details_map)d" type="action" class="oe_stat_button"
+                context="{'search_default_permit_id': permit_id}" icon="fa-map-marker"
+                string="Google Map"
+                attrs="{'invisible': ['|',('latitude', '=', 0.0), ('longitude', '=', 0.0)]}"/>
+            </xpath>
+        </field>
+    </record>
+
+</odoo>

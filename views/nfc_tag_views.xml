@@ -12,6 +12,37 @@
       </field>
     </record>
 
+    <record id="nfc_tags.nfc_tags_form" model="ir.ui.view">
+            <field name="name">nfc.tags.nfc_tags</field>
+            <field name="model">nfc_tags</field>
+            <field name="arch" type="xml">
+                <form class="nfc_tags_form">
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="tag_id"/>
+                                <field name="permit_id"/>
+                                <field name="next_inspection_date"/>
+                                <field name="length"/>
+                                <field name="breadth"/>
+                                <field name="height"/>
+                                <field name="safe_working_load"/>
+                            </group>
+                            <group>
+                                <field name="is_linked"/>
+                                 <field name="erected_by"/>
+                                <field name="erected_by_company"/>
+                                <field name="latitude"/>
+                                <field name="longitude"/>
+                                <field name="details"/>
+                            </group>
+                        </group>
+                    </sheet>
+
+                </form>
+            </field>
+        </record>
+
     <!-- actions opening views on models -->
 
     <record model="ir.actions.act_window" id="nfc_tags.action_window">

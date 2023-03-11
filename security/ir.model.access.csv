@@ -2,10 +2,7 @@ id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
 access_nfc_tags_group_user,nfc_tags group_user,model_nfc_tags,base.group_user,1,1,1,1
 access_scaffold_details_group_user,scaffold_details group_user,model_scaffold_details,base.group_user,1,1,1,1
 access_scaffold_status_group_user,scaffold_details group_user,model_scaffold_status,base.group_user,1,1,1,1
-access_scaffold_is_active_group_user,scaffold_details group_user,model_scaffold_is_active,base.group_user,1,1,1,1
-
 
 access_nfc_tags_group_partner_manager,nfc_tags group_partner_manager,model_nfc_tags,base.group_partner_manager,1,1,1,1
 access_scaffold_details_group_partner_manager,scaffold_details group_partner_manager,model_scaffold_details,base.group_partner_manager,1,1,1,1
-access_scaffold_is_active_group_partner_manager,scaffold_details group_partner_manager,model_scaffold_is_active,base.group_partner_manager,1,1,1,1
 access_scaffold_status_group_partner_manager,scaffold_details group_partner_manager,model_scaffold_status,base.group_partner_manager,1,1,1,1

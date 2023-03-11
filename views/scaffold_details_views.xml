@@ -26,16 +26,18 @@
     </record>
 
 <!--    this is the main form sheet  -->
-    <record id="nfc_tags.scaffold_details_form" model="ir.ui.view">
+    <record id="view_scaffold_details_form" model="ir.ui.view">
             <field name="name">nfc.tags.scaffold_details</field>
             <field name="model">scaffold_details</field>
             <field name="arch" type="xml">
                 <form class="scaffold_details_form">
                     <sheet>
+                        <div class="oe_button_box" name="button_box">
+						</div>
                         <group>
 
                             <group>
-                                <field name="tag_id"/>
+                                <field name="tag_id" options="{'no_quick_create':True,'no_create_edit':True,'no_open': True,}"/>
                                 <field name="permit_id"/>
                                 <field name="next_inspection_date"/>
                                 <field name="length"/>
@@ -48,8 +50,8 @@
                             <group>
                                 <field name="erected_by"/>
                                 <field name="erected_by_company"/>
-                                <field name="status"/>
-                                <field name="is_active" />
+                                <field name="status" options="{'no_quick_create':True,'no_create_edit':True,'no_open': True,}"/>
+                                <field name="is_active" options="{'no_quick_create':True,'no_create_edit':True,'no_open': True,}" />
                                 <field name="latitude"/>
                                 <field name="longitude"/>
                                 <field name="details"/>
