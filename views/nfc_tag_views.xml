@@ -20,21 +20,21 @@
                     <sheet>
                         <group>
                             <group>
-                                <field name="tag_id"/>
-                                <field name="permit_id"/>
-                                <field name="next_inspection_date"/>
-                                <field name="length"/>
-                                <field name="breadth"/>
-                                <field name="height"/>
-                                <field name="safe_working_load"/>
+                                <field name="tag_id" required="1"/>
+                                <field name="permit_id" required="1"/>
+                                <field name="next_inspection_date" required="1"/>
+                                <field name="length" required="1"/>
+                                <field name="breadth" required="1"/>
+                                <field name="height" required="1"/>
+                                <field name="safe_working_load" required="1"/>
                             </group>
                             <group>
-                                <field name="is_linked"/>
-                                 <field name="erected_by"/>
-                                <field name="erected_by_company"/>
-                                <field name="latitude"/>
-                                <field name="longitude"/>
-                                <field name="details"/>
+                                <field name="is_linked" readonly="1"/>
+                                 <field name="erected_by" required="1"/>
+                                <field name="erected_by_company" required="1"/>
+                                <field name="latitude" required="1"/>
+                                <field name="longitude" required="1"/>
+                                <field name="details" required="1"/>
                             </group>
                         </group>
                     </sheet>

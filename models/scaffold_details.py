@@ -6,11 +6,11 @@ class ScaffoldStatus(models.Model):
     _description ='scaffold_status'
 
     name = fields.Char(string='status')
-    code = fields.Char(string='code')
+    #code = fields.Char(string='code')
 
-    _sql_constraints = [
-        ('code', 'unique(code)', "A status with this code already exists. Stuff's name must be unique!"),
-    ]
+    #_sql_constraints = [
+    #    ('code', 'unique(code)', "A status with this code already exists. Stuff's name must be unique!"),
+    #]
 
 class ScaffoldDetails(models.Model):
     _name = 'scaffold_details'
@@ -25,8 +25,8 @@ class ScaffoldDetails(models.Model):
     safe_working_load = fields.Float(string='Safe Working Load')
     erected_by = fields.Char(string='Erected By')
     erected_by_company = fields.Char(string='Erected By Company')
-    status = fields.Many2one(comodel_name='scaffold_status', string='Status')
-    is_active = fields.Boolean(string='Active')
+    #status = fields.Many2one(comodel_name='scaffold_status', string='Status')
+    active = fields.Boolean(string='Active')
     latitude = fields.Float(string='Latitude Position')
     longitude = fields.Float(string='Longitude Position')
     details = fields.Text(string='Details')

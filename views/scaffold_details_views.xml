@@ -16,8 +16,8 @@
               <field name="safe_working_load"/>
               <field name="erected_by"/>
               <field name="erected_by_company"/>
-              <field name="status" widget="badge"/>
-              <field name="is_active" widget="badge"/>
+<!--              <field name="status" widget="badge"/>-->
+<!--              <field name="active" widget="badge"/>-->
               <field name="latitude"/>
               <field name="longitude"/>
               <field name="details"/>
@@ -50,8 +50,8 @@
                             <group>
                                 <field name="erected_by"/>
                                 <field name="erected_by_company"/>
-                                <field name="status" options="{'no_quick_create':True,'no_create_edit':True,'no_open': True,}"/>
-                                <field name="is_active" options="{'no_quick_create':True,'no_create_edit':True,'no_open': True,}" />
+<!--                                <field name="status" options="{'no_quick_create':True,'no_create_edit':True,'no_open': True,}"/>-->
+<!--                                <field name="is_active" options="{'no_quick_create':True,'no_create_edit':True,'no_open': True,}" />-->
                                 <field name="latitude"/>
                                 <field name="longitude"/>
                                 <field name="details"/>
