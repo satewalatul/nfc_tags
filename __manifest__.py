@@ -29,6 +29,7 @@
         'views/scaffold_details_views.xml',
         'views/nfc_tags_menu_views.xml',
         'views/nfc_tags_map.xml',
+        # 'views/checklist.xml',
 
     ],
     # only loaded in demonstration mode

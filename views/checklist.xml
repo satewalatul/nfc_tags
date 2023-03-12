@@ -2,35 +2,22 @@
   <data>
     <!-- explicit list view definition
     <record model="ir.ui.view" id="n-->
-    <record model="ir.ui.view" id="nfc_tags.scaffold_details_list">
-      <field name="name">scaffold_details list</field>
-      <field name="model">scaffold_details</field>
+    <record model="ir.ui.view" id="nfc_tags.checklist_list">
+      <field name="name">checklist list</field>
+      <field name="model">checklist</field>
       <field name="arch" type="xml">
         <tree>
-              <field name="tag_id"/>
-              <field name="permit_id"/>
-              <field name="next_inspection_date"/>
-              <field name="length"/>
-              <field name="breadth"/>
-              <field name="height"/>
-              <field name="safe_working_load"/>
-              <field name="erected_by"/>
-              <field name="erected_by_company"/>
-<!--              <field name="status" widget="badge"/>-->
-<!--              <field name="active" widget="badge"/>-->
-              <field name="latitude"/>
-              <field name="longitude"/>
-              <field name="details"/>
+              <field name="checklist_id"/>
         </tree>
       </field>
     </record>
 
 <!--    this is the main form sheet  -->
-    <record id="view_scaffold_details_form" model="ir.ui.view">
-            <field name="name">nfc.tags.scaffold_details</field>
-            <field name="model">scaffold_details</field>
+    <record id="view_checklist_form" model="ir.ui.view">
+            <field name="name">nfc.tags.checklist</field>
+            <field name="model">checklist</field>
             <field name="arch" type="xml">
-                <form class="scaffold_details_form">
+                <form class="checklist_form">
                     <sheet>
                         <div class="oe_button_box" name="button_box">
 						</div>
@@ -71,18 +58,18 @@
         </record>
     <!-- actions opening views on models -->
 
-    <record model="ir.actions.act_window" id="nfc_tags.scaffold_details_action_window">
-      <field name="name">Scaffold Details</field>
-      <field name="res_model">scaffold_details</field>
+    <record model="ir.actions.act_window" id="nfc_tags.checklist_action_window">
+      <field name="name">checklist</field>
+      <field name="res_model">checklist</field>
       <field name="view_mode">tree,form</field>
     </record>
 
 
     <!-- server action to the one above -->
 
-    <record model="ir.actions.server" id="nfc_tags.scaffold_details_action_server">
-      <field name="name">scaffold_details server</field>
-      <field name="model_id" ref="model_scaffold_details"/>
+    <record model="ir.actions.server" id="nfc_tags.checklist_action_server">
+      <field name="name">checklist server</field>
+      <field name="model_id" ref="model_checklist"/>
       <field name="state">code</field>
       <field name="code">
         action = {

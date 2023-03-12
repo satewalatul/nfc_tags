@@ -5,25 +5,26 @@ from odoo import models, fields, api
 
 class NfcTags(models.Model):
     _name = 'nfc_tags'
+    _inherit = ['mail.thread', 'mail.activity.mixin', 'format.address.mixin']
     _description = 'NFC Tags'
 
-    tag_id = fields.Char(string="Tag Id")
-    is_linked = fields.Boolean(string="Is Linked")
+    tag_id = fields.Char(string="Tag Id",tracking=True)
+    is_linked = fields.Boolean(string="Is Linked",tracking=True)
 
-    scaffold_details = fields.One2many('scaffold_details', 'tag_id', string='Scaffold Details', domain=[('active', '=', True)])
+    scaffold_details = fields.One2many('scaffold_details', 'tag_id', string='Scaffold Details',tracking=True, domain=[('active', '=', True)])
 
-    permit_id = fields.Char(compute='_compute_permit_id', inverse='_inverse_permit_id')
-    next_inspection_date = fields.Date(compute='_compute_next_inspection_date', inverse='_inverse_next_inspection_date')
-    length = fields.Float(compute='_compute_length',inverse='_inverse_length')
-    breadth = fields.Float(compute='_compute_breadth', inverse='_inverse_breadth')
-    height = fields.Float(compute='_compute_height', inverse='_inverse_height')
-    safe_working_load = fields.Float(compute='_compute_safe_working_load', inverse='_inverse_safe_working_load')
-    erected_by = fields.Char(compute='_compute_erected_by', inverse='_inverse_erected_by')
-    erected_by_company = fields.Char(compute='_compute_erected_by_company', inverse='_inverse_erected_by_company')
+    permit_id = fields.Char(compute='_compute_permit_id', inverse='_inverse_permit_id',tracking=True)
+    next_inspection_date = fields.Date(compute='_compute_next_inspection_date', inverse='_inverse_next_inspection_date',tracking=True)
+    length = fields.Float(compute='_compute_length',inverse='_inverse_length',tracking=True)
+    breadth = fields.Float(compute='_compute_breadth', inverse='_inverse_breadth',tracking=True)
+    height = fields.Float(compute='_compute_height', inverse='_inverse_height',tracking=True)
+    safe_working_load = fields.Float(compute='_compute_safe_working_load', inverse='_inverse_safe_working_load',tracking=True)
+    erected_by = fields.Char(compute='_compute_erected_by', inverse='_inverse_erected_by',tracking=True)
+    erected_by_company = fields.Char(compute='_compute_erected_by_company', inverse='_inverse_erected_by_company',tracking=True)
     # status = fields.Many2one(compute='_compute_status',if len(self.scaffold_details) else False, inverse=lambda self: None)
-    latitude = fields.Float(compute='_compute_latitude', inverse='_inverse_latitude')
-    longitude = fields.Float(compute='_compute_longitude', inverse='_inverse_longitude')
-    details = fields.Text(compute='_compute_details', inverse='_inverse_details')
+    latitude = fields.Float(compute='_compute_latitude', inverse='_inverse_latitude',tracking=True)
+    longitude = fields.Float(compute='_compute_longitude', inverse='_inverse_longitude',tracking=True)
+    details = fields.Text(compute='_compute_details', inverse='_inverse_details',tracking=True)
 
     def _compute_permit_id(self):
         if len(self.scaffold_details):

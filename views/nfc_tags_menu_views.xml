@@ -13,5 +13,16 @@
                   sequence="1"
                   action="nfc_tags.scaffold_details_action_window"/>
 
+        <menuitem name="Configuration"
+                  id="nfc_tags.configuration"
+                  parent="nfc_tags.menu_root"
+                  sequence="2"
+                  />
+
+        <menuitem name="Checklist"
+                  id="nfc_tags.checklist"
+                  parent="nfc_tags.configuration"
+                  sequence="1"
+                  />
     </data>
 </odoo>
